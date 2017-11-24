@@ -1,0 +1,117 @@
+/**
+ * 卡片
+ */
+
+$borderColor: #e6e6e6;
+$holeRadius: 5px;
+.card {
+  margin: .22rem;
+  .title,
+  .content {
+    background: white;
+    // padding: 0.22rem;
+    border: 1px solid $borderColor;
+    border-radius: 0.05rem;
+  }
+  .title {
+    // padding-bottom: 0;
+    border-bottom: none;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .content {
+    // padding-top: 0;
+    border-top: none;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  .divider {
+    overflow: hidden;
+    .line {
+      position: relative;
+      background: white;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 100%;
+        height: 1px;
+      }
+      &.dashed::before {
+        border-bottom: 1px dashed lighten($borderColor, 5%);
+      }
+      &.solid::before {
+        border-bottom: 1px solid lighten($borderColor, 5%);
+      }
+    }
+    .circle {
+      max-height: 1px;
+      max-width: 1px;
+      position: relative;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        width: $holeRadius * 2;
+        height: $holeRadius * 2;
+        border-radius: $holeRadius;
+        top: 0;
+      }
+      width: $holeRadius;
+      height: $holeRadius * 2;
+      &.left {
+        background: radial-gradient(circle at 0px $holeRadius, transparent ($holeRadius - 2px), transparent ($holeRadius - 1px), $borderColor ($holeRadius - 1px), $borderColor $holeRadius, white $holeRadius);
+        &::before {
+          left: - $holeRadius;
+        }
+      }
+      &.right {
+        background: radial-gradient(circle at $holeRadius $holeRadius, transparent ($holeRadius - 2px), transparent ($holeRadius - 1px), $borderColor ($holeRadius - 1px), $borderColor $holeRadius, white $holeRadius);
+        &::before {
+          right: - $holeRadius;
+        }
+      }
+    }
+  }
+}
+
+.card.padding {
+  .title,
+  .content {
+    padding: 0.22rem;
+  }
+}
+
+.card.shadow {
+  .title,
+  .content {
+    box-shadow: 1px 1px 2px 0px $borderColor;
+  }
+  .divider .circle {
+    &.left,
+    &.right {
+      &::before {
+        box-shadow: inset 2px 2px 2px 0px $borderColor;
+      }
+    }
+  }
+}
+
+.card.hole {
+  .title {
+    padding-bottom: 0rem;
+  }
+  .content {
+    padding-top: 0rem;
+  }
+  .divider {
+    .circle {
+      max-height: initial;
+      max-width: initial;
+      display: block;
+    }
+  }
+}

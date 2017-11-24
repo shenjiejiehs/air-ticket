@@ -1,0 +1,9 @@
+.card {
+  outline: 1px solid blue;
+  width: 80%;
+  height: 100px;
+  margin-right: 5%;
+  &:nth-child(2) {
+    height: 200px;
+  }
+}

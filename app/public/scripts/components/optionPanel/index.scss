@@ -1,0 +1,43 @@
+/**
+ * 选项面板
+ */
+
+.option-panel {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  pointer-events: none;
+  .wrapper {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    z-index: 999;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    will-change: transform;
+    .title {
+      color: #555;
+      padding: .08rem .16rem;
+      background-color: rgb(204, 204, 204);
+    }
+    .icon-select {
+      width: 1.6875rem*12/50;
+      height: 1.6875rem*12/50;
+      background-size: 1.6875rem*12/50;
+      background-repeat: no-repeat;
+      background-image: url('./check.svg');
+    }
+  }
+  &.active {
+    pointer-events: initial;
+    .wrapper {
+      transform: translateY(0);
+      box-shadow: 0 -1px 7px 0px rgb(148, 148, 148);
+    }
+  }
+}

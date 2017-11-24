@@ -1,0 +1,48 @@
+.nanhang1702-book {
+  .placeholder {
+    height: 1rem;
+  }
+  $iconSize: 0.34rem;
+  $iconMargin: 0.1rem;
+  .icon {
+    display: inline-block;
+    width: $iconSize;
+    height: $iconSize;
+    background: url('') center no-repeat;
+    background-size: contain;
+    &.inbound {
+      background-image: url('./../../images/inbound.svg');
+      margin-right: $iconMargin;
+    }
+    &.outbound {
+      background-image: url('./../../images/outbound.svg');
+      margin-right: $iconMargin;
+    }
+    &.hotel {
+      background-image: url('./../../images/hotel.svg');
+      margin-right: $iconMargin;
+    }
+    &.arrow {
+      background-image: url('./../../images/arrow.svg');
+      width: 2rem;
+    }
+    &.arrow-right {
+      background-image: url('./../../images/arrow-right.svg');
+      height: 0.2rem;
+    }
+    &.selected {
+      background-image: url('./../../images/selected.svg');
+    }
+    &.unselected {
+      background-image: url('./../../images/unselected.svg');
+    }
+  }
+  .product-content {
+    padding-left: $iconSize + $iconMargin;
+  }
+  .agreement {
+    ol,.agreement-title {
+      padding-left: 1em;
+    }
+  }
+}

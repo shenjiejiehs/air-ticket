@@ -1,0 +1,26 @@
+#passenger-list-page {
+  .hl-separator {
+    padding-top: .08rem;
+    padding-bottom: .08rem;
+  }
+  .icon-add {
+    width: 0.405rem;
+    height: 0.405rem;
+    background: url('./add-with-circle.svg') no-repeat center;
+    background-size: 0.405rem;
+    margin-right: .12rem;
+  }
+  .icon-remind {
+    width: .22rem;
+    height: .22rem;
+    background: url('./remind.svg') no-repeat center;
+    background-size: .22rem;
+    margin-right: .05rem;
+  }
+  .hl-bar-footer-placeholder {
+    height: 1.48rem;
+  }
+  .hl-bar-footer {
+    height: 1.48rem;
+  }
+}

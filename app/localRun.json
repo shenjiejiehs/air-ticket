@@ -1,0 +1,17 @@
+{
+  "name": "jipiao",
+  "script": "bin/www",
+  "exec_mode": "cluster",
+  "instances": 2,
+  "max_memory_restart": "500M",
+  "merge_logs": true,
+  "out_file": "~/.pm2/logs/jipiao/jipiao-out.log",
+  "error_file": "~/.pm2/logs/jipiao/jipiao-err.log",
+  "env": {
+    "APP_NAME": "jipiao",
+    "NODE_ENV": "dev",
+    "ENV": "dev",
+    "PORT": "3753",
+    "WECHAT_REDIRECT_PATH": "/jipiao"
+  }
+}

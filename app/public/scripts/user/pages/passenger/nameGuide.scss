@@ -1,0 +1,77 @@
+#passenger-nameGuide-page {
+  ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+  }
+  .bg-transparent {
+    background-color: transparent;
+  }
+  .title {
+    margin: .2rem auto .1rem;
+  }
+  .child-middle>* {
+    vertical-align: middle;
+  }
+  .icon-cn {
+    display: inline-block;
+    background: url('./cn.svg') center no-repeat;
+    background-size: contain;
+    width: .4rem;
+    height: .4rem;
+  }
+  .icon-en {
+    display: inline-block;
+    background: url('./en.svg') center no-repeat;
+    background-size: contain;
+    width: .4rem;
+    height: .4rem;
+  }
+  ul:last-child {
+    margin-bottom: 0;
+  }
+  ul.list-style-disk {
+    list-style: initial;
+    padding-left: initial;
+    list-style-type: disc;
+    padding-left: .4rem;
+  }
+  figure {
+    margin: .2rem auto;
+    figcaption {
+      margin-bottom: .2rem;
+    }
+    img {
+      display: block;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  .placeholder {
+    height: .2rem;
+  }
+  .name-form-vertical {
+    margin: 0.2rem 0 0.2rem 0;
+    background: white;
+  }
+  .name-form-horizonal {
+    margin: 0.2rem 0 0.2rem 0;
+    .label {
+      >* {
+        box-sizing: border-box;
+        padding-left: 0.2rem;
+      }
+    }
+    .value {
+      background: white;
+      border: 1px solid #ebebeb;
+      >* {
+        box-sizing: border-box;
+        padding: 0.2rem;
+      }
+      >:not(:first-child) {
+        border-left: 1px solid #ebebeb;
+      }
+    }
+  }
+}

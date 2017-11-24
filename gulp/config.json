@@ -1,0 +1,8 @@
+{
+  "calendar": {
+    "destDir": "app/data"
+  },
+  "station": {
+    "destDir": "app/data"
+  }
+}

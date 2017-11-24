@@ -1,0 +1,36 @@
+ .swiper {
+   overflow: hidden;
+   position: relative;
+   &-slider {
+     white-space: nowrap;
+     >* {
+       display: inline-block;
+     }
+   }
+   &-indicator {
+     position: absolute;
+     top: 0;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     pointer-events: none;
+     &-default {
+       position: absolute;
+       bottom: 10px;
+       left: 0;
+       right: 0;
+       .dot {
+         width: 5px;
+         height: 5px;
+         border-radius: 50%;
+         background: rgba(128, 128, 128, 0.2);
+         &:not(:last-child) {
+           margin-right: 5px;
+         }
+         &.active {
+           background: white;
+         }
+       }
+     }
+   }
+ }

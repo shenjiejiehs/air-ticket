@@ -1,0 +1,42 @@
+/**
+ * toggle
+ */
+
+.toggle {
+  display: inline-block;
+  * {
+    box-sizing: border-box;
+  }
+  .btn-toggle-circle {
+    background: url('./unselected.svg') center no-repeat;
+    background-size: contain;
+    width: 1.3rem*16/50;
+    height: 1.3rem*16/50;
+    display: inline-block;
+    &.lg {
+      width: 1.7rem*16/50;
+      height: 1.7rem*16/50;
+    }
+    &.active {
+      background-image: url('./selected.svg')
+    }
+  }
+  .btn-toggle-square {
+    background: url('./unselected-square.svg') center no-repeat;
+    background-size: contain;
+    width: 1.3rem*16/50;
+    height: 1.3rem*16/50;
+    display: inline-block;
+    &.sm {
+      width: 0.9rem*16/50;
+      height: 0.9rem*16/50;
+    }
+    &.lg {
+      width: 1.7rem*16/50;
+      height: 1.7rem*16/50;
+    }
+    &.active {
+      background-image: url('./selected-square.svg')
+    }
+  }
+}

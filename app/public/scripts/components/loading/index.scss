@@ -1,0 +1,49 @@
+#loading-container {
+  opacity: 1;
+  &.hidden {
+    opacity: 0;
+  }
+}
+
+.loading {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 500;
+  pointer-events: none;
+  &.dark {
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+  .wrapper {
+    background-color: #fff;
+    width: 70%;
+    width: 70vw;
+    padding-top: 0.8rem*12/50;
+    padding-bottom: 0.8rem*12/50;
+    border-radius: 0.25rem*12/50;
+    .loading-message {
+      margin-top: 0.5rem*12/50;
+      font-size: 16px;
+      color: #a8adae;
+      line-height: 1;
+    }
+  }
+  .loading-icon {
+    svg {
+      width: 1.7rem*12/50;
+      height: 1.7rem*12/50;
+      animation: 4s linear infinite spin;
+    }
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
+}

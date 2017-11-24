@@ -1,0 +1,34 @@
+.contact-info {
+  background-color: white;
+
+  .icon-contact {
+    width: 3rem*12/50;
+    height: 1.6875rem*12/50;
+    background: url("./contact.png") center no-repeat #fff;
+    background-size: 1.6875rem*12/50;
+    z-index: 1;
+  }
+
+  .input-msg {
+    padding-right: 2.34375rem*12/50;
+    box-sizing: border-box;
+  }
+
+  .person-icon,
+  .phone-icon {
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    background-position: left center;
+    height: 100%;
+    width: 1.1875rem*12/50;
+  }
+
+  .person-icon {
+    background-image:  url('../../../images/shared/person.svg');
+  }
+
+  .phone-icon {
+    background-image:  url('../../../images/shared/phone.svg');
+  }
+}

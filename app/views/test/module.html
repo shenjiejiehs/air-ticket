@@ -1,0 +1,14 @@
+{{#contentFor "pageStyle"}}
+{{/contentFor}}
+
+{{#contentFor "pageScripts"}}
+  <script src="{{url_base}}m-loader.js"></script>
+  <script>
+  requireAsync('{{{module}}}');
+  </script>
+{{/contentFor}}
+
+<div id="content"></div>
+
+
+

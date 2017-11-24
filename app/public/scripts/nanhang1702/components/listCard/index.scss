@@ -1,0 +1,14 @@
+/**
+ * 包含列表的卡片
+ */
+
+$borderColor: #e6e6e6;
+.list-card {
+  padding-left: .22rem;
+  .item {
+    padding: .22rem .22rem .22rem 0;
+  }
+  .item+.item {
+    border-top: 1px dashed $borderColor;
+  }
+}

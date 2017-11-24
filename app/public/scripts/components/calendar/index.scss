@@ -1,0 +1,57 @@
+@import "./../../../styles/hl-ui/scss/_variables";
+@import "./../../../styles/hl-ui/scss/_border";
+.calendar-widget {
+  background-color: white;
+  .header-bar {
+    .today {
+      font-size: .85rem*12/50;
+      padding: 0 .5rem*12/50;
+      z-index: 100;
+    }
+  }
+  [class*="invalid"] {
+    color: #d5d6d6;
+  }
+  .banner {
+    height: 0.5rem;
+    line-height: 0.5rem;
+    width: 100%;
+    padding: 0;
+    background-color: $nav-tabs-bg;
+  }
+  .banner-placeholder {
+    height: 1.5625rem*12/50;
+  }
+  .cal-header {
+    height: 0.7rem;
+    line-height: 0.7rem;
+    // font-size: 1rem*12/50;
+    background-color: $nav-tabs-bg;
+  }
+  .cal-body {
+    .cal-cell {
+      height: 1rem;
+      width: 14.28%;
+      line-height: 1rem;
+      white-space: nowrap;
+      @include border(bottom, $border-color);
+      &__txt {
+        height: 1rem;
+      }
+      &__price {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+      }
+      &.cal-day {
+        &.cal-active {
+          color: white;
+          background-color: #329ded;
+          &:after {
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}

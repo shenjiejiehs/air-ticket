@@ -1,0 +1,48 @@
+.order-status {
+  &.hl-box-border {
+    padding-left: 3rem*12/50;
+    background-color: white;
+  }
+  .status {
+    overflow-x: visible;
+    position: relative;
+    &::before {
+      content: ' ';
+      display: inline-block;
+      position: absolute;
+      background-size: contain;
+      background-repeat: no-repeat;
+      width: 1.6rem*12/50;
+      height: 1.5rem*12/50;
+      left: -2rem*12/50;
+      top: 50%;
+      transform: translateY(-50%);
+      padding-left: 0;
+    }
+  }
+  &.paid {
+    .status {
+      color: #55d764;
+      &::before {
+        background-image: url('./paid.svg');
+      }
+    }
+  }
+  &.canceled {
+    .status {
+      color: rgb(198, 211, 225);
+      &::before {
+        background-image: url('./canceled.svg');
+      }
+    }
+  }
+  &.pending {
+    .status {
+      color: #333;
+      &::before {
+        background-image: url('./pending.svg');
+      }
+    }
+  }
+}
+

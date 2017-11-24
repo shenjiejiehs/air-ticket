@@ -1,0 +1,21 @@
+.passengerInfo {
+  .hl-indent-icon {
+    width: 1.6875rem*12/50;
+    height: 1.6875rem*12/50;
+    background-size: 1.6875rem*12/50;
+    background-repeat: no-repeat;
+  }
+  .icon-delete {
+    background-image: url('./delete.svg');
+  }
+  .icon-add {
+    background-image: url('./add-with-circle.svg');
+  }
+  .icon-person {
+    width: .3rem;
+    height: .3rem;
+    background-size: .3rem;
+    background-repeat: no-repeat;
+    background-image: url('./person.svg');
+  }
+}

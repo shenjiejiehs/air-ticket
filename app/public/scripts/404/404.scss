@@ -1,0 +1,45 @@
+@charset "UTF-8";
+html {
+  background-color: #a4e1ff;
+}
+
+#content {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto;
+  color: #03689a;
+  font-family: '微软雅黑';
+}
+
+.head {
+  width: 60%;
+  max-width: 60%;
+  display: block;
+  margin: 3rem auto 2rem;
+}
+
+.status {
+  width: 65%;
+  max-width: 65%;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+.text {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+.btn {
+  color: #03689a;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  margin: 2rem auto;
+  font-size: 1.1rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.5rem;
+  border: .1rem solid #03689a;
+  max-width: 6rem;
+}

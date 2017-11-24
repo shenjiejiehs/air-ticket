@@ -1,0 +1,8 @@
+env:
+  NODE_ENV: dev
+  MONGO_DB_HOST: localhost:27017
+  MONGO_DB_USERNAME: false
+  MONGO_DB_PASSWD: ''
+  MONGO_DB_REPLICASET: false
+  CLIENT_DEBUG: true
+version: dev1

@@ -1,0 +1,21 @@
+.smsauth-auth {
+  * {
+    box-sizing: border-box;
+  }
+  .form-field {
+    height: .8rem;
+    margin-top: 0.22rem;
+    input {
+      border: 1px solid #efefef;
+      height: 100%;
+    }
+    .send-code {
+      margin-left: 0.22rem;
+    }
+  }
+  .submit {
+    box-sizing: border-box;
+    margin: .44rem .22rem;
+    width: auto;
+  }
+}

@@ -1,0 +1,14 @@
+.price-bar {
+  z-index: 99;
+  .hl-bar-footer {
+    background-color: rgb(227, 232, 236);
+    border-top: 1px solid darken(rgb(227, 232, 236), 5%);
+    .price {
+      font-size: 1.8rem*12/50;
+      line-height: 1.2;
+    }
+    .hl-btn {
+      padding: .375rem*12/50 1.75rem*12/50;
+    }
+  }
+}

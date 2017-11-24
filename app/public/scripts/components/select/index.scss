@@ -1,0 +1,18 @@
+@import "./../../../styles/hl-ui/scss/_variables";
+.simple-select {
+  padding: 0 .16rem;
+  background-color: #fff;
+  .label-required {
+    color: $red;
+    position: absolute;
+    left: -0.16rem;
+  }
+  .icon-dropdown {
+    float: right;
+    width: 0;
+    height: 0;
+    border-left: .08rem solid transparent;
+    border-right: .08rem solid transparent;
+    border-top: .10rem solid $blue;
+  }
+}

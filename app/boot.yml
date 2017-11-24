@@ -1,0 +1,65 @@
+before:
+  - path: init
+    name: initializing app
+
+  - path: exception
+    name: handle process exception
+
+  - path: load-module
+    name: add load module route
+    params:
+      debug: true
+      # cacheControlExpiration: 10800
+      routePath: /m
+      loaderPath: /m-loader.js
+      pathSettings:
+        base: ../public/scripts
+        paths:
+          data: ../../data
+          css: ../styles
+          image: ../images
+          common: ../../common
+          m-react: ../../node_modules/m-react/build/m-react.js
+          regenerator-runtime: ../../boot/load-module/transformers/regenerator/runtime.js
+      transformerSettings:
+        cssWrapper:
+          staticPath: ../public
+          routePath: /
+        svgWrapper:
+          depName: utils/loadSVG
+
+  - path: view
+    name: configuring view
+    params:
+      path:
+        view: ../views
+
+  - path: parser
+    name: configuring parser
+
+  - path: public
+    name: configuring public
+
+  - path: session
+    name: configuring session
+    params:
+      sidName: huoliSid
+      secret: NFVczVtR56
+      cluster: true
+
+  - path: client-logger
+    name: add client logger service
+    params:
+      log_server_port: 13337
+      log_level: trace
+
+after:
+  - path: routes
+    name: loading routes
+    params: ../routes
+
+  - path: error
+    name: setting error handlers
+    params:
+      path: ../
+

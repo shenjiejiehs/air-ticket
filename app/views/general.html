@@ -1,0 +1,20 @@
+{{#contentFor "pageStyle"}}
+  <!--<link rel="stylesheet" href="{{url_base}}styles/hl-ui.css">-->
+{{/contentFor}}
+
+{{#contentFor "pageScripts"}}
+
+  {{#if startModule}}
+    <script src="{{url_base}}m-loader.js" data-main="{{startModule}}"></script>
+  {{/if}}
+
+  {{#if block}}
+  <script src="{{url_base}}scripts/utils/blockload.js"></script>
+  <script>
+    window.blockLoad()
+  </script>
+  {{/if}}
+
+
+{{/contentFor}}
+<div id="content"></div>

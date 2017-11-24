@@ -1,0 +1,68 @@
+.vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%)
+}
+
+$barHeight:45px;
+$statusHeight: 20px;
+.header {
+  .nav-placeholder {
+    height: $barHeight;
+  }
+  .status-placeholder {
+    height: $statusHeight;
+  }
+  &-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: transform .3s;
+    z-index: 100;
+    >.title {
+      height: $barHeight;
+      color: white;
+      font-size: 19.2px;
+    }
+  }
+  &-controls {
+    position: fixed;
+    top: 0;
+    &.fullscreen {
+      top: $statusHeight;
+    }
+    left: 0;
+    right: 0;
+    height: $barHeight;
+    z-index: 101;
+    pointer-events: none;
+    >.left {
+      @extend .vertical-center;
+      height: 100%;
+      left: 0;
+      padding-left: 8px;
+      padding-right: 8px;
+      pointer-events: initial;
+    }
+    >.center {
+      pointer-events: initial;
+    }
+    >.right {
+      @extend .vertical-center;
+      height: 100%;
+      right: 0;
+      padding-left: 8px;
+      padding-right: 8px;
+      pointer-events: initial;
+    }
+    .icon-back {
+      display: inline-block;
+      background: url('./back.svg') center no-repeat;
+      background-size: contain;
+      width: 20px;
+      height: 20px;
+      pointer-events: initial;
+    }
+  }
+}

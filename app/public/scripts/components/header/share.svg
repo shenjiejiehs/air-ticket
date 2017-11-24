@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="26px" height="26px" viewBox="0 0 26 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>path-1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M12,17 L12.2777809,11.9999433 C12.4005091,9.79083562 15.2811819,7 17.4995531,7 L24,7" id="Rectangle-12-Copy" stroke="#FFFFFF" stroke-width="2"></path>
+        <polyline id="Line-Copy" stroke="#FFFFFF" stroke-width="2" stroke-linecap="square" transform="translate(20.242641, 7.242641) rotate(45.000000) translate(-20.242641, -7.242641) " points="17.2426407 4.24264069 22.7279221 4.41421357 23.2426407 10.2426407"></polyline>
+        <path d="M24,12.9789593 L24,20.0055689 C24,21.660406 22.662364,23 21.009947,23 L4.99005301,23 C3.34177873,23 2,21.6504515 2,19.9904421 L2,6.00955791 C2,4.34685176 3.34643638,3 5.00932937,3 L14,3 L14,1 L5.00932937,1 C2.24172876,1 0,3.24242033 0,6.00955791 L0,19.9904421 C0,22.7524442 2.23461591,25 4.99005301,25 L21.009947,25 C23.767589,25 26,22.7643211 26,20.0055689 L26,12.9789593 L24,12.9789593 Z" id="path-1" fill="#FFFFFF" fill-rule="nonzero"></path>
+    </g>
+</svg>

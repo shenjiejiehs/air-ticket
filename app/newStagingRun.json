@@ -1,0 +1,23 @@
+{
+  "name": "jipiao-staging",
+  "script": "bin/www",
+  "exec_mode": "cluster",
+  "instances": 2,
+  "max_memory_restart": "500M",
+  "merge_logs": true,
+  "out_file": "/home/lottery/.pm2/logs/jipiao/jipiao-staging-out.log",
+  "error_file": "/home/lottery/.pm2/logs/jipiao/jipiao-staging-err.log",
+  "env": {
+    "APP_NAME": "jipiao",
+    "NODE_ENV": "production",
+    "ENV": "prod",
+    "PORT": "13753",
+    "WECHAT_REDIRECT_PATH": "/jipiao",
+    // MONGO_DB配置
+    "MONGO_DB_HOST": "172.29.1.162:27017,172.29.1.159:27017,172.29.1.147:27017",
+    "MONGO_DB_USERNAME": "websession",
+    "MONGO_DB_PASSWD": "WHsessionWEB!",
+    "MONGO_DB_REPLICASET": "b28ticket",
+    "SESSION_MAX_AGE": 7200000 // 2*60*60*1000
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    }
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "commonjs": true
+  },
+  "globals": {
+    "ga": true,
+    "define": false,
+    "require": false,
+    "Promise": false,
+    "requireAsync": false,
+    "m": false
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+    "semi": [1, "always"],
+    "no-extra-boolean-cast": 1,
+    "no-console": 1,
+    "strict": 0,
+    "eqeqeq": 1,
+    "no-unused-vars": 1,
+    "no-underscore-dangle": 0,
+    "space-infix-ops": 0,
+    "no-use-before-define": 0,
+    "quotes": [
+      1,
+      "single"
+    ]
+  }
+}

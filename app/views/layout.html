@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="full-screen" content="yes">
+  <meta name="x5-fullscreen" content="true">
+  <title>{{title}}</title>
+  <!-- Page Styles -->
+  <link rel="stylesheet" href="{{{url_base}}}styles/app.css" data-embed>
+  {{{block "pageStyle"}}}
+
+  {{#if headless}}
+     <script>window.__headless=true</script>
+  {{/if}}
+
+  <script src="{{url_base}}scripts/shared/error.js" data-embed></script>
+
+  {{#if debug_console}}
+    <script src="{{url_base}}scripts/vendors/eruda.js"></script>
+    <script>
+      localStorage['eruda-home-button'] = JSON.stringify({
+        "rememberPos": true,
+        "pos": {
+          "x": 0,
+          "y": 200
+        }
+      });
+      eruda.init();
+    </script>
+  {{/if}}
+
+  <script>
+    // 根路径
+    window.url_base = '{{{url_base}}}';
+    // 页面数据
+    {{#if pageData}}
+      window.__pageData__ = {{{pageData}}};
+    {{/if}}
+    // 渠道数据
+    {{#if partner}}
+      window.__partner__ = {{{partner}}};
+    {{/if}}
+    // 环境配置
+    {{#if env}}
+      window.__env__ = '{{{env}}}';
+    {{/if}}
+  </script>
+</head>
+
+<body id="page-body">
+  {{{body}}}
+  <!-- Browsersync_console -->
+  {{{block "pageScripts"}}}
+   <script>
+     window.onload = function() {
+       (function(i, s, o, g, r, a, m) {
+         i['GoogleAnalyticsObject'] = r;
+         i[r] = i[r] || function() {
+           (i[r].q = i[r].q || []).push(arguments)
+         }, i[r].l = 1 * new Date();
+         a = s.createElement(o),
+           m = s.getElementsByTagName(o)[0];
+         a.async = 1;
+         a.src = g;
+         m.parentNode.insertBefore(a, m)
+       })(window, document, 'script', '{{url_base}}scripts/vendors/analytics.min.js', 'ga');
+       ga('create', 'UA-58073175-15', 'auto');
+       {{{ block "gaScripts" }}}
+       ga('send', 'pageview');
+     };
+   </script>
+</body>
+
+</html>

@@ -1,0 +1,36 @@
+@import "./../../../../styles/hl-ui/scss/_variables";
+#passenger-edit-page {
+  .icon-question {
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    background: url('./question.svg') no-repeat center;
+    background-size: .24rem;
+    margin-left: .05rem;
+  }
+  .icon-arrow-right {
+    display: inline-block;
+    width: .24rem;
+    height: .24rem;
+    background: url('./arrow-right.svg') no-repeat center;
+    background-size: .24rem;
+  }
+  .btn-toggle {
+    color: $blue;
+    border: 1px solid $blue;
+    border-radius: .06rem;
+    span {
+      display: inline-block;
+      padding: .05rem .1rem;
+    }
+    .active {
+      color: white;
+      background-color: $blue;
+    }
+    .inter {
+      .inter-name {
+        box-sizing: border-box;
+      }
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{{#contentFor "pageStyle"}}
+{{/contentFor}}
+
+{{#contentFor "pageScripts"}}
+  <script src="{{url_base}}m-loader.js"></script>
+  <script>
+  requireAsync('modules/initRoute').then(function(initRoute){
+    initRoute({
+      el: '#content',
+      home: '{{{module}}}'
+    }).start();
+  });
+
+  </script>
+{{/contentFor}}
+
+<div id="content" class="page-wrapper"></div>
+
+
+

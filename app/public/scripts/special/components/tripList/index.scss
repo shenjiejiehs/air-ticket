@@ -1,0 +1,71 @@
+.trip-list {
+  margin: 0 -0.06rem 0rem .18rem;
+  * {
+    line-height: 1;
+  }
+  .trip-wrapper {
+    padding-right: .24rem;
+    padding-bottom: .2rem;
+    box-sizing: border-box;
+    display: inline-block;
+    width: 50%;
+    overflow: visible;
+  }
+  .trip {
+    position: relative;
+    height: 1.8rem;
+    background: white;
+    border-radius: .06rem;
+    padding: .3rem 0 .1rem;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 3px 0px rgba(96, 96, 96, 0.2);
+    overflow: hidden;
+    .month {
+      display: inline-flex;
+      position: absolute;
+      width: .54rem;
+      height: .3rem;
+      right: 0;
+      top: 0;
+      color: white;
+      background-color: rgb(255, 156, 82);
+      border-top-right-radius: .06rem;
+    }
+    .dep-arr {
+      color: #383838;
+    }
+    .goback-cabin,
+    .discount {
+      color: #8c8c8c;
+    }
+    .price {
+      color: #ff9c52;
+    }
+    &.soldout {
+      .month {
+        background-color: #b2b2b2;
+      }
+      .dep-arr {
+        color: #8c8c8c;
+      }
+      .goback-cabin,
+      .discount {
+        color: #8c8c8c;
+      }
+      .price {
+        color: #8c8c8c;
+      }
+      &::before {
+        content: ' ';
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        background: url('./soldout.svg') no-repeat center;
+        background-size: contain;
+        width: 0.9rem;
+        height: 0.9rem;
+      }
+    }
+  }
+}

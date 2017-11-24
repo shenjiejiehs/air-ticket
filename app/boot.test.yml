@@ -1,0 +1,36 @@
+before:
+  - path: load-module
+    name: add load module route
+    params:
+      cacheControlExpiration: 10800
+      reloadOnChange: false
+      routePath: /m
+      loaderPath: /m-loader.js
+      pathSettings:
+        base: ../public/scripts
+        paths:
+          data: ../../data
+          css: ../styles
+          image: ../images
+          common: ../../common
+          m-react: '@m-react'
+          regenerator-runtime: ../../boot/load-module/transformers/regenerator/runtime.min.js
+      transformerSettings:
+        cssWrapper:
+          staticPath: ../public
+          routePath: /
+        svgWrapper:
+          depName: utils/loadSVG
+
+  - path: client-logger
+    name: add client logger service
+    params:
+      debug: false
+      log_server_port: 13337
+
+  - path: session
+    params:
+      sidName: huoliSid
+      secret: NFVczVtR56
+      mongodbCollection: web-huoli
+      cluster: true

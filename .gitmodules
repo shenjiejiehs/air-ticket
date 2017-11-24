@@ -1,0 +1,9 @@
+[submodule "app/common"]
+	path = app/common
+	url = ssh://git@gitlab.huolih5.com:6022/h5/universal.git
+[submodule "app/public/styles/hl-ui"]
+	path = app/public/styles/hl-ui
+	url = https://github.com/fatsheepcn/HappyLucky-UI.git
+[submodule "ansible"]
+	path = ansible
+	url = ssh://git@gitlab.huolih5.com:6022/h5/ansible-deploy.git

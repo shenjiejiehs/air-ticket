@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+  <title>组件展示页</title>
+  <meta name="format-detection" content="telephone=no">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mithril/0.2.0/mithril.min.js"></script>
+  <link rel="stylesheet" href="{{url_base}}styles/flex.css" data-embed>
+  <style>
+    html,
+    body {
+      font-family: Helvetica, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+
+    header {
+      width: 100%;
+      background-color: #567fbc;
+      color: white;
+      padding: 2rem 2rem 1em;
+      font-size: 1.2rem;
+    }
+
+    header h1 {
+      margin-bottom: 0rem;
+      font-weight: normal;
+    }
+
+    header small {
+      opacity: 0.8;
+    }
+
+    .toggle {
+      display: none;
+    }
+
+    nav {
+      margin: 3rem;
+      padding: 1rem;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      line-height: 1.5;
+      color: #888;
+    }
+
+    nav li {
+      cursor: pointer;
+    }
+
+    nav li.active,
+    nav li:hover {
+      color: #567fbc;
+    }
+
+    main {
+      margin: 3rem;
+    }
+
+    main iframe {
+      width: 320px;
+      height: 568px;
+      border: 1px solid lightgray;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        display: none !important;
+      }
+      .toggle {
+        display: flex;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0.5rem;
+        background-color: black;
+        align-items: center;
+        justify-content: center;
+        z-index: 11;
+        opacity: 0.5;
+        color: white;
+        border-radius: 5px;
+        font-size: smaller;
+      }
+      nav {
+        display: block;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background-color: #5a5a5a;
+        margin: 0;
+        z-index: 10;
+        will-change: transform;
+        transform: translateY(-100%);
+        transition: transform 1s;
+        font-size: smaller;
+        opacity: 0.9;
+      }
+      nav.active {
+        transform: translateY(0);
+      }
+      nav ul {
+        color: #afafaf;
+      }
+      nav li.active,
+      nav li:hover {
+        color: white;
+      }
+      main {
+        margin: 0 !important;
+      }
+      main iframe {
+        width: 100vw;
+        height: 100vh;
+        border: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script>
+    const __components = {{{components}}}
+    const __selected = {{{selected}}}
+  </script>
+  <script>
+    const app = {
+      controller: function() {
+        const selected = m.prop(__selected)
+        const components = m.prop(__components)
+        const navVisible = m.prop(false)
+        return {
+          selected,
+          components,
+          navVisible,
+          select: function(comp) {
+            navVisible(false)
+            history.replaceState(null, '', `catalogue?selected=${comp}`)
+            selected(comp)
+          }
+        }
+      },
+      view: function(ctrl) {
+        const {
+          select,
+          selected,
+          components,
+          navVisible
+        } = ctrl
+        return m('.fx-row.fx-wrap.fx-h-center', [
+          m('header', [
+            m('h1', '组件展示页'),
+            m('small', '这是我们做的小组件')
+          ]),
+          m('.toggle', {
+            onclick: () => navVisible(!navVisible())
+          }, '列表'),
+          m('nav' + (navVisible() ? '.active' : ''),
+            m('ul', components().map(comp =>
+              m('li' + (comp == selected() ? '.active' : ''), {
+                onclick: () => select(comp)
+              }, comp)))
+          ),
+          m('main',
+            m('iframe', {
+              src: `./component/${selected()}/spec`,
+              frameborder: '0'
+            })
+          )
+        ])
+      }
+    }
+    m.mount(document.getElementById('container'), app)
+  </script>
+</body>
+
+</html>

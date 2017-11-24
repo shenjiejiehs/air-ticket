@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="38px" height="38px" viewBox="0 0 38 38" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>name</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <path d="M3.00282354,35.999 L35.003,35.999 L35.003,31.659 C34.5888801,31.43 33.8848762,31.104 33.6109923,30.978 L33.3766381,30.869 L24.2434113,28.396 C23.190229,27.861 22.646226,25.737 22.5850492,25.182 C22.4617544,24.089 23.4631717,22.376 24.0542337,21.865 C26.8006018,19.498 27.0961329,15.678 27.0961329,14.146 L27.0961329,8.08 C27.0961329,5.901 23.0161104,2 19.0019706,2 C14.9821837,2 10.9068671,5.901 10.9068671,8.08 L10.9068671,14.146 C10.9068671,15.676 11.2033394,19.494 13.9478251,21.865 C14.5360636,22.371 15.5374809,24.082 15.4179508,25.182 C15.356774,25.737 14.8099475,27.862 13.7605299,28.396 L13.5835878,28.462 L4.62730309,30.867 L4.33836032,31.004 C4.04659401,31.142 3.3952963,31.448 3,31.666 L3,35.999 L3.00282354,35.999 Z" id="path-1"></path>
+        <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="-2" y="-2" width="36.003" height="37.999">
+            <rect x="1" y="0" width="36.003" height="37.999" fill="white"></rect>
+            <use xlink:href="#path-1" fill="black"></use>
+        </mask>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <use id="Shape-Copy" stroke="#138EEA" mask="url(#mask-2)" stroke-width="4" xlink:href="#path-1"></use>
+    </g>
+</svg>

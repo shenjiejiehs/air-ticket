@@ -1,0 +1,57 @@
+image: 192.168.2.174:5000/test/node6:git_yarn_ansible
+
+stages:
+  - pkg
+  - test
+  - deploy
+before_script:
+  - sleep 3
+  - git submodule sync # apply patch
+  - git submodule update --init --recursive
+
+pkg:
+  script:
+    - /bin/bash  .gitlab-ci/install.sh
+  stage: pkg
+  only:
+    - master
+    - staging
+    - release
+
+test:
+  script:
+    - ln -s /cache/npm_pkg/gulp/node_modules node_modules
+    - ln -s /cache/npm_pkg/app/node_modules app/node_modules
+    - npm run test
+  stage: test
+  only:
+    - master
+    - staging
+    - release
+
+deploy_test:
+  script:
+    - /bin/bash .gitlab-ci/build.sh
+    - cd $CI_PROJECT_DIR/ansible
+    - ansible-playbook test-deploy.yml -e "build_num=$CI_BUILD_ID" -e "artifact_file=../build.tar.gz" -e "pm2_script=testRun" -e "deploy_name=jipiao"
+  only:
+    - master
+  stage: deploy
+
+deploy_staging:
+  script:
+    - /bin/bash .gitlab-ci/build.sh
+    - cd $CI_PROJECT_DIR/ansible
+    - ansible-playbook new-staging-deploy.yml -e "build_num=$CI_BUILD_ID" -e "artifact_file=../build.tar.gz" -e "pm2_script=newStagingRun" -e "deploy_name=jipiao"
+  only:
+    - staging
+  stage: deploy
+
+deploy_release:
+  script:
+    - /bin/bash .gitlab-ci/build.sh
+    - cd $CI_PROJECT_DIR/ansible
+    - ansible-playbook new-release-deploy.yml -e "build_num=$CI_BUILD_ID" -e "artifact_file=../build.tar.gz" -e "pm2_script=newReleaseRun" -e "deploy_name=jipiao"
+  only:
+    - release
+  stage: deploy

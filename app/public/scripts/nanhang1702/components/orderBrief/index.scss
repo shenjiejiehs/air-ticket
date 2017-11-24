@@ -1,0 +1,44 @@
+/**
+ * 订单概要卡片
+ */
+
+$iconSize: 0.4rem;
+$iconMargin: 0.1rem;
+$borderColor: #e6e6e6;
+.order-brief-content {
+  margin: 0rem 0.22rem;
+  .icon {
+    display: inline-block;
+    width: $iconSize;
+    height: $iconSize;
+    background: url('') center no-repeat;
+    background-size: contain;
+    &.inbound {
+      background-image: url('./../../images/inbound.svg');
+      margin-right: $iconMargin;
+    }
+    &.outbound {
+      background-image: url('./../../images/outbound.svg');
+      margin-right: $iconMargin;
+    }
+    &.hotel {
+      background-image: url('./../../images/hotel.svg');
+      margin-right: $iconMargin;
+    }
+  }
+  .order-brief-section {
+    padding: 0.1rem 0;
+    &+.order-brief-section {
+      border-top: 1px dashed $borderColor;
+    }
+  }
+  .order-brief-item {
+    &+.order-brief-item {
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+.order-brief-title {
+  margin: 0.22rem 0.22rem 0;
+}

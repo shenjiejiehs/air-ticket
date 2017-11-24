@@ -1,0 +1,10 @@
+@import "./../../../styles/hl-ui/scss/_variables";
+.simple-input {
+  padding: 0 .16rem;
+  background-color: #fff;
+  .label-required {
+    color: $red;
+    position: absolute;
+    left: -0.16rem;
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "jipiao",
+  "script": "bin/www",
+  "exec_mode": "cluster",
+  "instances": 2,
+  "max_memory_restart": "500M",
+  "merge_logs": true,
+  "out_file": "/home/tangq/.pm2/logs/jipiao/jipiao-out.log",
+  "error_file": "/home/tangq/.pm2/logs/jipiao/jipiao-err.log",
+  "env": {
+    "APP_NAME": "jipiao",
+    "NODE_ENV": "test",
+    "ENV": "test",
+    "PORT": "3753",
+    "WECHAT_REDIRECT_PATH": "/jipiao",
+    // MONGO_DB配置
+    "MONGO_DB_HOST": "221.235.53.164:27017",
+    "MONGO_DB_USERNAME": "h5pass",
+    "MONGO_DB_PASSWD": "h5pass",
+    "SESSION_MAX_AGE": 7200000 // 2*60*60*1000
+  }
+}
